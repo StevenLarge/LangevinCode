@@ -6,7 +6,7 @@
 import os
 import matplotlib.pyplot as plt
 
-import LangevinPropagator
+import LangevinPropogator
 import ReadWrite
 import Plotting
 
@@ -56,7 +56,7 @@ CPVel = CPDistance/float(ProtocolDuration)
 #----- Equilibrate the initial state of the system -----
 
 while time <= EquilibrationTime:
-	time,position,velocity = LangevinPropagator.Equilibration(time,position,velocity,CP)
+	time,position,velocity = LangevinPropogator.Equilibration(time,position,velocity,CP)
 	PositionTracker_Eq.append(position)
 	VelocityTracker_Eq.append(velocity)
 	CPTracker_Eq.append(CP)
@@ -68,7 +68,7 @@ time = 0
 WorkAcc = 0
 
 while time <= ProtocolDuration:
-	time,position,velocity,CP,WorkStep = LangevinPropagator.Langevin(time,position,velocity,CP,CPVel)
+	time,position,velocity,CP,WorkStep = LangevinPropogator.Langevin(time,position,velocity,CP,CPVel)
 	WorkAcc += WorkStep
 	PositionTracker.append(position)
 	VelocityTracker.append(velocity)
