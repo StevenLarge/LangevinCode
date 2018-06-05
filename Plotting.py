@@ -29,6 +29,14 @@ def PlotSimulationData(Position_Eq,Velocity_Eq,CP_Eq,Position,Velocity,CP):
 	ax[1,1].plot(TimeRange,Velocity,color='g',linewidth=1.5,alpha=0.6)
 	ax[1,2].plot(TimeRange,CP,color='r',linewidth=1.5,alpha=0.6)
 
+	ax[0,0].set_title(r"Position equilibration",fontsize=16)
+	ax[0,1].set_title(r"Velocity equilibration",fontsize=16)
+	ax[0,2].set_title(r"$\lambda$ equilibration",fontsize=16)
+
+	ax[1,0].set_title(r"Position dynamics",fontsize=16)
+	ax[1,1].set_title(r"Velocity dynamics",fontsize=16)
+	ax[1,2].set_title(r"$\lambda$ dynamics",fontsize=16)
+
 	ax[1,0].set_xlabel(r"Time $t$",fontsize=16)
 	ax[1,0].set_ylabel(r"Position $x$",fontsize=16)
 
