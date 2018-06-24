@@ -6,7 +6,7 @@
 import os
 import matplotlib.pyplot as plt
 
-import LangevinPropagator
+import LangevinPropogator
 import ReadWrite
 import Plotting
 
@@ -56,7 +56,7 @@ CPVel = CPDistance/float(ProtocolDuration)
 #----- Equilibrate the initial state of the system -----
 
 while time <= EquilibrationTime:
-	time,position,velocity = LangevinPropagator.Equilibration(time,position,velocity,CP)
+	time,position,velocity = LangevinPropogator.Equilibration(time,position,velocity,CP)
 	PositionTracker_Eq.append(position)
 	VelocityTracker_Eq.append(velocity)
 	CPTracker_Eq.append(CP)
@@ -68,7 +68,7 @@ time = 0
 WorkAcc = 0
 
 while time <= ProtocolDuration:
-	time,position,velocity,CP,WorkStep = LangevinPropagator.Langevin(time,position,velocity,CP,CPVel)
+	time,position,velocity,CP,WorkStep = LangevinPropogator.Langevin(time,position,velocity,CP,CPVel)
 	WorkAcc += WorkStep
 	PositionTracker.append(position)
 	VelocityTracker.append(velocity)
@@ -82,11 +82,7 @@ Plotting.PlotSimulationData(PositionTracker_Eq,VelocityTracker_Eq,CPTracker_Eq,P
 
 #----- Print the total work done in the protocol -----
 
-<<<<<<< HEAD
-print("TotalWork --> " + str(WorkAcc) + "\n")
-=======
 print "TotalWork --> " + str(WorkAcc) + "\n"
->>>>>>> 4b5dc44734ef40de40b844d30abdaa518108eb92
 
 
 #----- Write trajectory data to file -----

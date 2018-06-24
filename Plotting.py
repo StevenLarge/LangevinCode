@@ -5,12 +5,20 @@
 
 import os
 import matplotlib.pyplot as plt
+<<<<<<< HEAD
 #import seaborn as sns
+=======
+import seaborn as sns
+>>>>>>> 4b5dc44734ef40de40b844d30abdaa518108eb92
 from Parameters import *
 
 def PlotSimulationData(Position_Eq,Velocity_Eq,CP_Eq,Position,Velocity,CP):
 
+<<<<<<< HEAD
 	#sns.set(style='darkgrid',color_codes=True)
+=======
+	sns.set(style='darkgrid',color_codes=True)
+>>>>>>> 4b5dc44734ef40de40b844d30abdaa518108eb92
 
 	TimeRange = []
 	time = 0

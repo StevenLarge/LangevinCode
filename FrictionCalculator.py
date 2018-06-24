@@ -6,7 +6,11 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+<<<<<<< HEAD
 #import seaborn as sns
+=======
+import seaborn as sns
+>>>>>>> 4b5dc44734ef40de40b844d30abdaa518108eb92
 
 import LangevinPropagator
 from Parameters import *
@@ -26,7 +30,11 @@ def CalculateFriction(CorrArray,LagTime):
 ForceTracker = []
 
 MaxLag = 25							#Maximum simulated time lag for correlation function
+<<<<<<< HEAD
 TotalStatistics = 10000 			#Total number of statistics obtained for each lag time
+=======
+TotalStatistics = 10000000 			#Total number of statistics obtained for each lag time
+>>>>>>> 4b5dc44734ef40de40b844d30abdaa518108eb92
 StatCount = 0
 ForceAccumulator = 0	 			#Accumulator variable for calculating the average force
 
@@ -87,12 +95,20 @@ for index in range(len(CorrArray)):
 
 Friction = CalculateFriction(CorrArray,LagTime) 											#Calculate the generalized friction by integrating the correlation function
 
+<<<<<<< HEAD
 print("\n\n\tGeneralized Friction --> " + str(Friction) + "\n\n")
+=======
+print "\n\n\tGeneralized Friction --> " + str(Friction) + "\n\n"
+>>>>>>> 4b5dc44734ef40de40b844d30abdaa518108eb92
 
 ReadWrite.WriteCorrelation(WritePath,WriteName_Correlation,CorrArray,LagTime)
 ReadWrite.WriteFriction(WritePath,WriteName_Friction,Friction,CP)
 
+<<<<<<< HEAD
 #sns.set(style='darkgrid',color_codes=True,palette='muted')
+=======
+sns.set(style='darkgrid',color_codes=True,palette='muted')
+>>>>>>> 4b5dc44734ef40de40b844d30abdaa518108eb92
 
 fig,ax = plt.subplots(1,2)
 
@@ -104,7 +120,11 @@ ax[1].plot(LagTime,CorrArray,linewidth=3.0)
 ax[1].set_yscale('log')
 
 ax[0].set_title(r"Linear Scale",fontsize=16)
+<<<<<<< HEAD
 ax[1].set_title(r"SemiLog-y Scale",fontsize=16)
+=======
+ax[1].set_title(r"Log-Log Scale",fontsize=16)
+>>>>>>> 4b5dc44734ef40de40b844d30abdaa518108eb92
 
 plt.show()
 plt.close()
